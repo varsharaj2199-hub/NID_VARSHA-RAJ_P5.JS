@@ -12,7 +12,7 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   frameRate(5);
-  //ANSHUL
+  
 }
 
 function draw() {
