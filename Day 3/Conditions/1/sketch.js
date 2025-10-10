@@ -6,9 +6,9 @@ function setup() {
 
 function mouseClicked() {
   if(mouseY < height/2)  
-    fill("yellow");
-    ellipse(mouseX,mouseY,20);
+    fill("blue");
+    ellipse(mouseX,mouseY,10);
   if(mouseY > height/2)
     fill("red");
-    ellipse(mouseX,mouseY,20);
+    ellipse(mouseX,mouseY,10);
   }
