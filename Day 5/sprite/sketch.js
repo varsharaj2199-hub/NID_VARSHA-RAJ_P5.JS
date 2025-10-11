@@ -2,8 +2,6 @@ let spriteImg;
 let sRows = 4, sCols = 8;
 let sprites =[];
 let count = 0;
-let xDir=0;
-let xPos=0;
 
 function preload() {
   spriteImg = loadImage("images/1.png");
@@ -34,17 +32,9 @@ function draw() {
 
   if (isKeyPressed) {
   count++;
-  xPos = xPos + xDir
   }
   
   function keyPressed()  {
-    if(keyCode == 37) 
-    xDir = -5;
-    
-    if (keyCode == 39) 
-      
-       xDir = +5;
-
-
+    if(keyCode == 32) {}
   }
 }

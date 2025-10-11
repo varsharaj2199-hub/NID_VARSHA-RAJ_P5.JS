@@ -3,6 +3,7 @@ function setup() {
   createCanvas(innerWidth, innerHeight);
   frameRate(10);
    background(0);
+   noCursor()
 }
 
 function draw() {
