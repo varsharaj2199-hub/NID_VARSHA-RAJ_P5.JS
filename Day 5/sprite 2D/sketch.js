@@ -43,12 +43,6 @@ function draw() {
   fill(115,80,61);
   rect(0,120,innerWidth,innerHeight);
   
-
-
-
-
-
-
   image(sprites[row][count],x,y);
   if(frameCount%5==0 && isKeyPressed) {
     count = (count+1)%spriteX;
@@ -98,7 +92,6 @@ function keyPressed() {
    row = 0;
     xdir = 0;
     ydir = 0;
-  0
   
   
 }
