@@ -2,7 +2,7 @@ Day 4 Task -  Create generative pattern using images
 
 AIM:
 
-To creates a dynamic grid pattern made of randomly chosen images.
+To create a dynamic grid pattern made of randomly chosen images.
 Each cell in the grid displays one of four preloaded images, selected at random every frame.
 The result is a continuously changing mosaic-like animation of pictures.
 

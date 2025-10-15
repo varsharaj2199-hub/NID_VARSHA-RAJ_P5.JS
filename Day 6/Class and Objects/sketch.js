@@ -22,8 +22,6 @@ function draw() {
     cars[i].move();
     cars[i].grow();
   }
-
-  
  // myCar.show();
  // thatCar.show();
  // myCar.move();

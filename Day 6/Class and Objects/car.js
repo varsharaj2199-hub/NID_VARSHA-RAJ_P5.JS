@@ -24,7 +24,7 @@ class Car{
         }
        }
       grow() {
-      if ( this.size = 200) {
+      if ( this.size < 200) {
         this.size = this.size + 1};
       }
 }
