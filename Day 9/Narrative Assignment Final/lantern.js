@@ -4,29 +4,24 @@ class Lantern {
     this.y = y;
     this.size = s;
     this.speed = random(1, 3);
-    this.colorPhase = random(0, 255);
+   
   }
 
   show() {
-    // glowing color based on vertical position
-    let r = map(sin(frameCount * 0.05 + this.colorPhase), -1, 1, 150, 255);
+    let r = map(sin(frameCount * 0.05), -1, 1, 150, 255);
     let g = map(this.y, height, 0, 100, 255);
     let b = map(this.y, height, 0, 50, 200);
-
     fill(r, g, b, 180);
     noStroke();
-    ellipse(this.x, this.y, this.size, this.size * 1.3);
+    rect(this.x, this.y, this.size, this.size * 1.3);
+    ellipse(this.x + 10,this.y + 20, 10);
   }
 
   move() {
-    // rise up
     this.y -= this.speed;
-
-    // loop back to bottom when reaching top
     if (this.y < -this.size) {
       this.y = height + random(50, 200);
       this.x = random(0, width);
     }
   }
 }
-

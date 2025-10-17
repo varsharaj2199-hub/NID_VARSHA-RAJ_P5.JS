@@ -13,7 +13,7 @@ let noLantern = 40;
 let lanternActive = false;
 
 function preload() {
-  spriteImage = loadImage('Images/1 2.png'); // sprite sheet
+  spriteImage = loadImage('Images/1_2.png'); // sprite sheet
 
   // background images
   g0 = loadImage("images/0.png");
@@ -39,14 +39,14 @@ function setup() {
     }
   }
 
-  // place sprite at bottom
-  y = innerHeight - h - 50;
+  
+  y = innerHeight - h ;
 
-  // create lanterns but keep hidden until scene 7
+  
   for (let i = 0; i < noLantern; i++) {
     let tempLantern = new Lantern(
       random(0, width),
-      random(height, height + 300), // start slightly below screen
+      random(height, height + 300),
       random(30, 60)
     );
     lanterns.push(tempLantern);
@@ -57,15 +57,15 @@ function draw() {
   background(0);
 
   // scene backgrounds
-  if (scene === 1) image(g0, 0, 0, width, height);
-  else if (scene === 2) image(g1, 0, 0, width, height);
+  if (scene === 1) image(g6, 0, 0, width, height);
+  else if (scene === 2) image(g5, 0, 0, width, height);
   else if (scene === 3) image(g2, 0, 0, width, height);
   else if (scene === 4) image(g3, 0, 0, width, height);
-  else if (scene === 5) image(g4, 0, 0, width, height);
-  else if (scene === 6) image(g5, 0, 0, width, height);
-  else if (scene === 7) image(g6, 0, 0, width, height);
+  else if (scene === 5) image(g1, 0, 0, width, height);
+  else if (scene === 6) image(g4, 0, 0, width, height);
+  else if (scene === 7) image(g0, 0, 0, width, height);
 
-  // simple ground platform
+  
   fill(40, 120, 50);
   noStroke();
   rect(0, height - 40, width, 40);
@@ -73,7 +73,7 @@ function draw() {
   // sprite
   image(sprites[row][count], x, y);
 
-  // movement
+ 
   if (keyIsDown(RIGHT_ARROW)) {
     row = 6;
     xdir = 10;
@@ -88,10 +88,10 @@ function draw() {
 
   x += xdir;
 
- 
+
   if (scene === 1 && x < 0) x = 0;
 
-
+  
   if (x > width) {
     if (scene < 7) {
       scene++;
@@ -101,25 +101,25 @@ function draw() {
     }
   }
 
-
   if (x < 0 && scene > 1) {
     scene--;
     x = width - 50;
   }
 
-
+  
   if (scene === 7) {
     lanternActive = true;
   }
 
- 
+  
   if (lanternActive) {
     for (let i = 0; i < lanterns.length; i++) {
       lanterns[i].move();
       lanterns[i].show();
     }
   }
-   // simple ground platform
+
+
   fill(40, 120, 50);
   noStroke();
   rect(0, height - 40, width, 40);
@@ -130,8 +130,3 @@ function keyReleased() {
   row = 0;
   xdir = 0;
 }
-
-
-
-
-
