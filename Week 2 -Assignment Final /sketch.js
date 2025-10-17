@@ -21,7 +21,7 @@ let showPrompt = false;
 
 
 function preload() {
-  spriteImage = loadImage('Images/1_2.png'); // sprite sheet
+  spriteImage = loadImage('images/1_2.png'); // sprite sheet
 
   // background images
   g0 = loadImage("images/0.png");
