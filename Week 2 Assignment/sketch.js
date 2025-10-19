@@ -1,4 +1,4 @@
-let g0, g1, g2, g3, g4; // background images
+let g0, g1, g2, g3, g4,g5; 
 let scene = 1;
 
 let spriteImage, sprites = [];
@@ -21,7 +21,7 @@ let showPrompt = false;
 
 
 function preload() {
-  spriteImage = loadImage('Images/1_2.png'); // sprite sheet
+  spriteImage = loadImage('images/1_2.png'); // sprite sheet
 
   // background images
   g0 = loadImage("images/0.png");
@@ -29,6 +29,8 @@ function preload() {
   g2 = loadImage("images/2.png");
   g3 = loadImage("images/3.png");
   g4 = loadImage("images/4.png");
+  // character 2
+  g5 = loadImage("images/5.png");
 
 
 }
@@ -89,11 +91,7 @@ function draw() {
     if (keyIsDown(RIGHT_ARROW)) {
       row = 6;
       xdir = 10;
-      if (frameCount % 5 === 0) count = (count + 1) % spriteX;
-    } else if (keyIsDown(LEFT_ARROW)) {
-      row = 7;
-      xdir = -10;
-      if (frameCount % 5 === 0) count = (count + 1) % spriteX;
+   if (frameCount % 4 === 0) count = (count + 1) % spriteX;
     } else {
       xdir = 0;
       row = 0; // idle pose
@@ -118,11 +116,11 @@ function draw() {
 
   // character 2 waiting
   if (scene === 5) {
-    let x2 = width / 2;
-    let y2 = height / 2 + 300;
+    let x2 = width / 2 - 50;
+    let y2 = height / 2 + 280;
 
-    fill(0, 200, 255);
-    rect(x2, y2, 80, 120);
+    
+    image(g5, x2, y2);
 
     // checking Character 1 meets Character 2
     if (dist(x + 50, y, x2, y2) < 80 && !showDialogue && !lanternActive) {
@@ -139,13 +137,13 @@ function draw() {
     textAlign(CENTER, CENTER);
 
     if (dialogueStep === 0)
-    text("Character 2: Oh, what took you so long?...Click to continue.", width / 2, 50);
+    text("Girl: You took your time getting here... I almost thought you'd forgotten.", width / 2, 50);
     else if (dialogueStep === 1)
-      text("Character 1: I was here learning how to create lanterns for you.", width / 2, 50);
+      text("Boy: I was finishing something special. Couldn't rush it.", width / 2, 50);
     else if (dialogueStep === 2)
-      text("Character 2: Did you manage to complete it?", width / 2, 50);
+      text("Girl: Something special? You always keep me guessing...", width / 2, 50);
     else if (dialogueStep === 3)
-      text("Character 1: Great, let's watch!", width / 2, 50);
+      text("Boy:Just... look up", width / 2, 50);
     else if (dialogueStep >= 4) {
       showDialogue = false;
       showPrompt = true; 
@@ -157,7 +155,8 @@ function draw() {
     fill(255);
     textSize(22);
     textAlign(CENTER);
-    text("Press SPACE to watch the lanterns", width / 2,  80);
+    text("Press SPACE ", width / 2,  80);
+    
   }
 
   // lantern movement after space
@@ -168,7 +167,7 @@ function draw() {
     }
   }
 
-  //bottomm platfprm
+  //bottom platform
   fill(40, 120, 50);
   noStroke();
   rect(0, height - 40, width, 40);
