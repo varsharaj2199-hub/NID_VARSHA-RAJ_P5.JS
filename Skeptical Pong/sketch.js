@@ -9,7 +9,7 @@ let fontPixel;
 
 
 function preload() {
-  fontPixel = loadFont('/font/BoldPixels.ttf');
+  fontPixel = loadFont('font/BoldPixels.ttf');
   }
 
 function setup() {
