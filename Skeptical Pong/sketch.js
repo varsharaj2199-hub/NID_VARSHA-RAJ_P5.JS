@@ -40,7 +40,7 @@ function drawIntroScreen() {
   fill(153,51,255);
   textFont(fontPixel);
   textSize(80);
-  text("Skeptial Pong", width / 2, height / 3);
+  text("Skeptical Pong", width / 2, height / 3);
 
   textSize(20);
   fill(255,100);
