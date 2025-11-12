@@ -17,6 +17,7 @@ function draw() {
     flowers[i].moveFlower();
     flowers[i].drawFlower();
      flowers[i].growFlower();
+     flowers[i].swayFlower();
   }
 }
 

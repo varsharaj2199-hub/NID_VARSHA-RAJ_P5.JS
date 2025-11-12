@@ -6,6 +6,7 @@ class Flower{
         this.ySpeed = ySpeed;
         this.size = 50;
         this.hovered = false;
+        this.angle = random(TWO_PI);
         }
         drawFlower() {
             if(this.hovered==true){
@@ -39,12 +40,12 @@ class Flower{
 growFlower() {
     
         this.size = this.size + 1
-
-        if (
-            
-        )
-      }
 }
 
+swayFlower() {
+    this.angle += 0.05; 
+    this.x += sin(this.angle) * 0.5;
+}
+}
             
     
